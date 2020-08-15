@@ -90,8 +90,64 @@ bool comparison(Process a, Process b)
 {
     return (a.duration < b.duration);
 }
-
-
+void findWaitingTimeSJF(Process proc[], int n, int wt[]) {
+   int rt[n];
+   for (int i = 0; i < n; i++)
+   rt[i] = proc[i].duration;
+   int complete = 0, t = 0, minm = INT_MAX;
+   int shortest = 0, finish_time;
+   bool check = false;
+   while (complete != n) {
+      for (int j = 0; j < n; j++) {
+         if ((proc[j].arrival_time <= t) && (rt[j] < minm) && rt[j] > 0) {
+            minm = rt[j];
+            shortest = j;
+            check = true;
+         }
+      }
+      if (check == false) {
+         t++;
+         continue;
+      }
+      // decrementing the remaining time
+      rt[shortest]--;
+      minm = rt[shortest];
+      if (minm == 0)
+         minm = INT_MAX;
+         // If a process gets completely
+         // executed
+         if (rt[shortest] == 0) {
+            complete++;
+            check = false;
+            finish_time = t + 1;
+            // Calculate waiting time
+            wt[shortest] = finish_time -
+            proc[shortest].duration -
+            proc[shortest].arrival_time;
+            if (wt[shortest] < 0)
+               wt[shortest] = 0;
+         }
+         // Increment time
+         t++;
+   }
+}
+void findavgTimeSJF(Process proc[], int n) {
+   int wt[n], tat[n], total_wt = 0,
+   total_tat = 0;
+   // Function to find waiting time of all
+   // processes
+   findWaitingTimeSJF(proc, n, wt);
+   // Function to find turn around time for
+   // all processes
+   findTurnAroundTime(proc, n, wt, tat);
+   cout << "Processes " << " Burst time " << " Waiting time " << " Turn around time\n";
+   for (int i = 0; i < n; i++) {
+      total_wt = total_wt + wt[i];
+      total_tat = total_tat + tat[i];
+      cout << " " << proc[i].ccode << "\t\t" << proc[i].duration << "\t\t " << wt[i] << "\t\t " << tat[i] << endl;
+   }
+   cout << "\nAverage waiting time = " << (float)total_wt / (float)n; cout << "\nAverage turn around time = " << (float)total_tat / (float)n;
+}
   
 
 int main()
@@ -109,8 +165,8 @@ int main()
     cout << "Order in which process gets executed";    
      findAverageTime(proc, n);
  
-    // sorting processes by burst time.
-    sort(proc, proc + n, comparison);
+    // SJF
+  
 	cout << endl << endl;
  	cout << "Shortest Job First: ";
 	cout << endl << endl;
@@ -119,8 +175,11 @@ int main()
     {
         cout << proc[i].ccode <<" ";
     }
- 
-    findAverageTime(proc, n);
+    
+    cout << endl;
+ 	  findavgTimeSJF(proc, n);
+    
+    //Priority scheduling for now tak take into account arrival time lagi, will be fixed 
     
     priorityScheduling(proc, n); 
     
