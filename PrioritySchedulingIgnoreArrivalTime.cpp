@@ -17,7 +17,7 @@ struct Process
 // sort the processes based on priority
 bool sortProcesses(Process a, Process b) 
 { 
-    return (a.priority < b.priority); 
+    return (a.priority > b.priority); 
 } 
 
 
