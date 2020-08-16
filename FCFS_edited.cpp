@@ -45,6 +45,13 @@ void findAverageTime(Process proc[], int n)
     // function to find turn around time for all processes
     findTurnAroundTime(proc, n, wt, tat);
  
+ 
+    cout << "Order in which process gets executed\n"; 
+    for(int i=0; i<n ; i++ ){
+    	cout << proc[i].ccode << " " ;
+    }
+ 
+ 
     // display processes along with all details
     cout << "\nProcesses "<< " Burst time "
          << " Waiting time " << " Turn around time\n";
@@ -72,13 +79,13 @@ int main()
 	// CSC3401 with priority 3 for 2 hours prefered to start second, 
 	// and CSC1103 with priority 1 for 1 hour 
 	
-	Process proc[] = {{2201,3,2,1}, {3401, 2, 3,2}, {1103, 1,1,3}};
+	Process proc[] = {{2201,3,2,1}, {3401,2,3,2}, {1103,1,1,3}};
     int n = sizeof proc / sizeof proc[0];
     
     
   	cout << "First Come First Serve: ";
 	cout << endl << endl;
-    cout << "Order in which process gets executed";    
+    
      findAverageTime(proc, n);
  
 
