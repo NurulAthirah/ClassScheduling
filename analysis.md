@@ -12,11 +12,12 @@ Describe what you have considered
 
 Give an analysis of your algo and compare it with the other two
 
-## Algo2
+## SJF
 
 Give an analysis of your algo and compare it with the other two
 
-## Algo3
+## PrioritySchedulling
 
 Give an analysis of your algo and compare it with the other two
 
+## Conclusion
