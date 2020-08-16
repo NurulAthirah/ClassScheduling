@@ -30,7 +30,7 @@ proc[2].priority = 1;
 }
 
 bool prioritySort(Process a,Process b){
-    return a.priority < b.priority; 
+    return a.priority > b.priority; 
 }
 
 bool arrival_timeSort(Process a,Process b){
@@ -102,5 +102,4 @@ int main(){
     disp(nop);
     return 0;
 }
-
 
