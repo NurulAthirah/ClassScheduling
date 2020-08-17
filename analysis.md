@@ -28,9 +28,6 @@ Process ID	Arrival Time	Burst Time	Waiting Time	Turn Around Time
 3401	         2	             2	        3	               5
 1103	         3	             1	        5	               6
 	
-The Gantt chart below shows the time split which represents each process of the FCFS algorithm:
-     2201	   2201	     2201	   3401	    3401	    1103
-  0	       1	     2		    3		    4	        5	        6
 
 The first-come-first-served scheduler show a simple way to calculate as each job starts as soon as the processor becomes free, and takes exactly its burst time to complete. In addition, after calculated the start and end times to calculate the wait times, thus use that formula to obtain the turnaround time. The calculation below shows the result of average turnaround time and waiting time when using the First Come First Serve scheduler:
 
