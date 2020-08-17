@@ -22,6 +22,7 @@ There are various types of scheduling algorithms which are First Come First Serv
 ## FCFS
 First Come First Serve (FCFS) Scheduling Algorithm is a non-preemptive schedule algorithm, which means the process cannot be pre-empted in between the processing once it starts executing in the processor. Therefore, this type of scheduling algorithm is not implemented the concept of priority and urgency. Besides, in the FCFS algorithm, the process gets executed in the same sequence in which they enter the ready state.  It doesn't include any complex logic, it just puts the process requests in a queue and executes it one by one. Thus, FCFS is quiet simple and easy to implement. Eventually, every process will get a chance to run, hence no starvation will occur. The only disadvantage of FCFS is there is no option for pre-emption of a process. If a process is started, then CPU executes the process until it ends.
 We implement this class timetable as an example to examine the three scheduling algorithms. Suppose there are 3 processes with process ID’s 2201, 3401 and 1103 and the processes will be entered into the CPU. Thus, if the OS follows the FCFS algorithm for scheduling these processes, then they will be executed in the following manner:
+
 Process ID	Arrival Time	Burst Time	Waiting Time	Turn Around Time
 2201	         1	             3	        0	               3
 3401	         2	             2	        3	               5
@@ -32,6 +33,7 @@ The Gantt chart below shows the time split which represents each process of the 
   0	       1	     2		    3		    4	        5	        6
 
 The first-come-first-served scheduler show a simple way to calculate as each job starts as soon as the processor becomes free, and takes exactly its burst time to complete. In addition, after calculated the start and end times to calculate the wait times, thus use that formula to obtain the turnaround time. The calculation below shows the result of average turnaround time and waiting time when using the First Come First Serve scheduler:
+
 Total Turnaround Time = 3 + 5 + 6 
             = 14 milliseconds
     Average Turn Around Time= Total Turn Around Time / Total No. of Processes
@@ -53,7 +55,9 @@ OUTPUT : 2201, 3401, 1103
 Average waiting time = 1.33333
 Average turn around time = 3.33333
 
-## Algo3
+## PrioritySchedulling
+Priority Scheduling is a method of scheduling processes that is based on priority. In this algorithm, the scheduler selects the tasks to work as per the priority. The task with higher priority will be carried out while round-robin or FCFS-based jobs with similar priorities are done. Priority depends on the demands on memory and time. In Priority Preemptive Scheduling, the tasks are mostly assigned with their priorities. In Priority Non-preemptive scheduling method, the CPU has been allocated to a specific process. Processes are executed on the basis of priority so high priority does not need to wait for long which saves time. If high priority processes take lots of CPU time, then the lower priority processes may starve and will be postponed for an indefinite time.
 
-Give an analysis of your algo and compare it with the other two
+
+
 
