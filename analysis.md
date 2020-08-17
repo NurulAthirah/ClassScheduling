@@ -48,7 +48,7 @@ The average turnaround time and waiting time will show a different result if usi
 ## SJF
 For the shortest job first algorithm, this algorithm has the shortest execution time for the next execution. In non-preemptive SJF scheduling,the process holds it until it reaches a waiting state or terminates once the CPU cycle is allocated to the process. This algorithm gives the shortest average waiting time for a process better than FCFS and priority scheduling algorithms. Thus, the processes can be executed faster.
 
-OUTPUT : 2201, 3401, 1103   
+OUTPUT : 2201, 1103, 3401   
 Average waiting time = 1.33333
 Average turn around time = 3.33333
 
