@@ -55,9 +55,21 @@ OUTPUT : 2201, 3401, 1103
 Average waiting time = 1.33333
 Average turn around time = 3.33333
 
-## PrioritySchedulling
+## Priority Schedulling
 Priority Scheduling is a method of scheduling processes that is based on priority. In this algorithm, the scheduler selects the tasks to work as per the priority. The task with higher priority will be carried out while round-robin or FCFS-based jobs with similar priorities are done. Priority depends on the demands on memory and time. In Priority Preemptive Scheduling, the tasks are mostly assigned with their priorities. In Priority Non-preemptive scheduling method, the CPU has been allocated to a specific process. Processes are executed on the basis of priority so high priority does not need to wait for long which saves time. If high priority processes take lots of CPU time, then the lower priority processes may starve and will be postponed for an indefinite time.
 
+OUTPUT : 
 
+Order in which processes gets executed
+1103 2201 3401
 
+Processes  Burst time  Waiting time  Turn around time
+ 1103           1        0               1
+ 2201           3        1               4
+ 3401           2        4               6
+Average waiting time = 1.66667
+Average turn around time = 3.66667
 
+#Conclusion
+
+Among the three calculation of these algorithms, we found that SJF has the shortest waiting time compared to FCFS and Priority Schedulling.
