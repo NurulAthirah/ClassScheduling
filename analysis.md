@@ -61,14 +61,15 @@ Priority Scheduling is a method of scheduling processes that is based on priorit
 OUTPUT : 
 
 Order in which processes gets executed
-1103 2201 3401
+2201 3401 1103
 
-Processes  Burst time  Waiting time  Turn around time
- 1103           1        0               1
- 2201           3        1               4
- 3401           2        4               6
+Processes  Arrival Time  Priority  Burst Time  Turn around  Waiting Time 
+ 2201           1           2          3           3             0
+ 3401           3           3          2           4             2
+ 1103           2           1          1           4             3
+Average Response Time = 1.66667
 Average waiting time = 1.66667
-Average turn around time = 3.66667
+Average TA time = 1.66667
 
 #Conclusion
 
